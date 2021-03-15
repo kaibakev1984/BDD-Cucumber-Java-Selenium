@@ -20,5 +20,17 @@
   "Email Error": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[1]/div[2]/span/text()[1]"
+  },
+  "Male": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[1]/span[1]"
+  },
+  "Female": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[2]/span[1]"
+  },
+  "No binary": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[3]/span[1]"
   }
 }

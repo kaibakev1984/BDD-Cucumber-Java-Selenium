@@ -133,4 +133,9 @@ public class StepsDefinitions {
     public void iSwitchToParentFrame() {
         functions.switchToParentFrame();
     }
+
+    @And("^I check the checkbox having (.*)$")
+    public void iCheckTheCheckboxHavingFrameInput(String element) throws Exception {
+        functions.checkCheckbox(element);
+    }
 }
