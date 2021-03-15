@@ -15,5 +15,10 @@
   "Mes de Nacimiento": {
     "GetFieldBy": "id",
     "ValueToFind": "month"
+  },
+
+  "Email Error": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[1]/div[2]/span/text()[1]"
   }
 }

@@ -31,6 +31,14 @@ Feature: Examples
     Then I close the window
 
   @test
+  Scenario: I check state
+    Given I go to site https://www.spotify.com/ar/signup/
+    Then I load the DOM Information spotify_registro.json
+    And I set Email with text kvasquez@fi.uba.ar
+    Then I check if Email Error error message is false
+    Then I close the window
+
+  @test
   Scenario: Search Dresses
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json

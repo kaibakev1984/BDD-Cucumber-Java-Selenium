@@ -171,7 +171,7 @@ public class SeleniumFunctions {
     }
 
     public boolean isElementDisplayed(String element) throws Exception {
-        boolean isDisplayed = Boolean.parseBoolean(null);
+        boolean isDisplayed;
         try {
             By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
             log.info(String.format("Waiting Element: %s", element));

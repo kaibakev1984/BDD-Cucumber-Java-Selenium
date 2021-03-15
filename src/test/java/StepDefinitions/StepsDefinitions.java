@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import gherkin.ast.Scenario;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -24,6 +25,9 @@ public class StepsDefinitions {
 
     WebDriver driver;
     SeleniumFunctions functions = new SeleniumFunctions();
+
+    public static boolean actualState = Boolean.parseBoolean(null);
+
     Logger log = Logger.getLogger(StepsDefinitions.class);
 
     public StepsDefinitions() {
@@ -111,5 +115,12 @@ public class StepsDefinitions {
     public void iCloseTheWindow() {
         log.info("Closing windows");
         driver.close();
+    }
+
+
+    @Then("I check if (.*?) error message is (.*)")
+    public void iCheckIfErrorMessageIs(String element, String state) throws Exception {
+        actualState = functions.isElementDisplayed(element);
+        Assert.assertEquals("El estado es diferente al esperado", actualState, Boolean.valueOf(state));
     }
 }
