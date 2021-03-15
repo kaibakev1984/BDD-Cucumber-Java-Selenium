@@ -60,6 +60,14 @@ Feature: Examples
     Then I switch to Frame: Frame3
     And I check the checkbox having Frame3 input
 
+  ##  Tests using Amazon
+  #   Para ejecutar scripts de JS
+  @test
+    Scenario: Scroll to elements
+      Given I go to site https://www.amazon.es/
+      Then I load the DOM Information amazon.json
+      And I click in JS element Mi cuenta
+
   ##  Tests from Automation Practice  
   @test
   Scenario: Search Dresses

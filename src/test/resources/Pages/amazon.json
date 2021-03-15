@@ -1,0 +1,10 @@
+{
+  "Sobre Amazon": {
+    "GetFieldBy": "link",
+    "ValueToFind":"Sobre Amazon.es"
+  },
+  "Mi cuenta": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[contains(text(), 'Mi cuenta')]"
+  }
+}

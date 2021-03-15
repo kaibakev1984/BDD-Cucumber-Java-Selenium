@@ -5,9 +5,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -213,4 +214,12 @@ public class SeleniumFunctions {
             driver.findElement(SeleniumElement).click();
         }
     }
+
+    public void clickJSElement(String element) throws Exception {
+        By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        log.info("Click to element with: " + element);
+        jse.executeScript("arguments[0].click()", driver.findElement(SeleniumElement));
+    }
+
 }

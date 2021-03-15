@@ -138,4 +138,11 @@ public class StepsDefinitions {
     public void iCheckTheCheckboxHavingFrameInput(String element) throws Exception {
         functions.checkCheckbox(element);
     }
+
+    @And("^I click in JS element (.*)$")
+    public void iClickInJSElementMiCuenta(String element) throws Exception {
+        functions.clickJSElement(element);
+    }
+
+
 }
