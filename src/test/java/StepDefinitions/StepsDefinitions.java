@@ -106,4 +106,10 @@ public class StepsDefinitions {
         Select opt = (Select) functions.selectOption(element);
         opt.selectByIndex(option);
     }
+
+    @Then("I close the window")
+    public void iCloseTheWindow() {
+        log.info("Closing windows");
+        driver.close();
+    }
 }

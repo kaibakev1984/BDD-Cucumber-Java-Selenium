@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
 public class SeleniumFunctions {
@@ -166,5 +168,20 @@ public class SeleniumFunctions {
         WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
         log.info("Waiting for the element: " + element + " to be visible");
         wait.until(ExpectedConditions.elementToBeClickable(SeleniumElement));
+    }
+
+    public boolean isElementDisplayed(String element) throws Exception {
+        boolean isDisplayed = Boolean.parseBoolean(null);
+        try {
+            By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
+            log.info(String.format("Waiting Element: %s", element));
+            WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+            isDisplayed = wait.until(ExpectedConditions.presenceOfElementLocated(SeleniumElement)).isDisplayed();
+        } catch (NoSuchElementException | TimeoutException e) {
+            isDisplayed = false;
+            log.info(e);
+        }
+        log.info(String.format("%s visibility is: %s", element, isDisplayed));
+        return isDisplayed;
     }
 }

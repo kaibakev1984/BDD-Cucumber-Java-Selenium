@@ -19,7 +19,7 @@ Feature: Examples
     And I set index 03 in dropdown Mes de Nacimiento
 
   @test
-    Scenario: Get Url
+    Scenario: Get Url Google
     Given I go to site http://www.google.com
 
   @test
@@ -28,6 +28,7 @@ Feature: Examples
     Then I load the DOM Information spotify_registro.json
     And I do a click in element Email
     And I set Email with text kvasquez@fi.uba.ar
+    Then I close the window
 
   @test
   Scenario: Search Dresses
