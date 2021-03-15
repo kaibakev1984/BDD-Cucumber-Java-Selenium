@@ -6,5 +6,9 @@
   "Mi cuenta": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//span[contains(text(), 'Mi cuenta')]"
+  },
+  "Mis Pedidos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"a-page\"]/div[2]/div/div[2]/div[1]/a/div/div"
   }
 }

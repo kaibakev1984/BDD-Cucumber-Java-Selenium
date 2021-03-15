@@ -67,6 +67,7 @@ Feature: Examples
       Given I go to site https://www.amazon.es/
       Then I load the DOM Information amazon.json
       And I click in JS element Mi cuenta
+      And I wait for element Mis Pedidos to be present
 
   ##  Tests from Automation Practice  
   @test
