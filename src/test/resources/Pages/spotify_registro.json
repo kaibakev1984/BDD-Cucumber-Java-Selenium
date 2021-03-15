@@ -1,0 +1,19 @@
+{
+  "Email":{
+    "GetFieldBy": "id",
+    "ValueToFind": "email"
+  },
+
+  "Confirmation Email":{
+    "GetFieldBy": "id",
+    "ValueToFind": "confirmation"
+  },
+  "Titulo": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div[2]/h2"
+  },
+  "Mes de Nacimiento": {
+    "GetFieldBy": "id",
+    "ValueToFind": "month"
+  }
+}
