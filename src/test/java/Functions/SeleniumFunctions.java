@@ -184,4 +184,15 @@ public class SeleniumFunctions {
         log.info(String.format("%s visibility is: %s", element, isDisplayed));
         return isDisplayed;
     }
+
+    public void switchToFrame(String frame) throws Exception {
+        By SeleniumElement = SeleniumFunctions.getCompleteElement(frame);
+        log.info("Switching to frame: " + frame);
+        driver.switchTo().frame(driver.findElement(SeleniumElement));
+    }
+
+    public void switchToParentFrame() {
+        log.info("Switching to parent frame");
+        driver.switchTo().parentFrame();
+    }
 }
