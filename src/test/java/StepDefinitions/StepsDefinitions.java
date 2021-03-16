@@ -127,12 +127,12 @@ public class StepsDefinitions {
     }
 
     @And("^I switch to Frame: (.*)")
-    public void iSwitchToFrame(String frame) throws Exception {
+    public void switchToFrame(String frame) throws Exception {
         functions.switchToFrame(frame);
     }
 
     @And("^I switch to parent frame")
-    public void iSwitchToParentFrame() {
+    public void switchToParentFrame() {
         functions.switchToParentFrame();
     }
 
@@ -142,30 +142,30 @@ public class StepsDefinitions {
     }
 
     @And("^I click in JS element (.*)$")
-    public void iClickInJSElementMiCuenta(String element) throws Exception {
+    public void clickInJSElement(String element) throws Exception {
         functions.clickJSElement(element);
     }
 
 
     @And("^I wait for element (.*) to be present")
-    public void iWaitForElementMisPedidosToBePresent(String element) throws Exception {
+    public void waitForElementToBePresent(String element) throws Exception {
         actualState = functions.isElementDisplayed(element);
         Assert.assertEquals("El estado es diferente al esperado", true, actualState);
     }
 
     @And("^I scroll to element (.*)")
-    public void iScrollToElementSobreAmazon(String element) throws Exception {
+    public void scrollToElement(String element) throws Exception {
         functions.scrollToElement(element);
     }
 
     @Then("^Assert if (.*) contains text (.*)")
-    public void assertIfEmailErrorContainsTextLoSentimosEsteCorreoYaEstáRegistrado(String element, String text) throws Exception {
+    public void assertTextEquals(String element, String text) throws Exception {
         String actualText = functions.GetTextElement(element);
         Assert.assertEquals(text, actualText);
     }
 
     @Then("Assert if (.*) is equal to (.*)")
-    public void assertIfEmailErrorIsEqualToLoSentimosEsteCorreoYaEstáRegistrado(String element, String text) throws Exception {
+    public void checkPartialTextElementPresent(String element, String text) throws Exception {
         functions.checkPartialTextElementPresent(element, text);
     }
 }

@@ -2,5 +2,45 @@
   "Search Query": {
     "GetFieldBy": "id",
     "ValueToFind": "search_query_top"
+  },
+  "Search Lighter": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/h1/span[1]"
+  },
+  "Search Heading Counter": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/h1/span[2]"
+  },
+  "Contact us": {
+    "GetFieldBy": "id",
+    "ValueToFind": "contact-link"
+  },
+  "Subject Heading": {
+    "GetFieldBy": "id",
+    "ValueToFind": "id_contact"
+  },
+  "Email address": {
+    "GetFieldBy": "id",
+    "ValueToFind": "email"
+  },
+  "Order reference": {
+    "GetFieldBy": "id",
+    "ValueToFind": "id_order"
+  },
+  "Send": {
+    "GetFieldBy": "id",
+    "ValueToFind": "submitMessage"
+  },
+  "Message": {
+    "GetFieldBy": "id",
+    "ValueToFind": "message"
+  },
+  "Alert Success": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/p"
+  },
+  "Alert Danger": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/div/ol/li"
   }
 }
