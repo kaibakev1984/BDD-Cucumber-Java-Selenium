@@ -1,4 +1,8 @@
 Feature: Automation Practice
+
+  Background:
+    Given I set UserEmail value in Data Scenario
+
   @test
   Scenario: Search Dresses
     Given I go to site http://automationpractice.com/index.php
@@ -45,3 +49,20 @@ Feature: Automation Practice
     And I set Message with text Hello world!
     And I do a click in element Send
     Then Assert if Alert Danger is equal to Please select a subject from the list provided.
+
+  @test
+  Scenario Outline: Click in Women block title
+    Given I go to site http://automationpractice.com/index.php
+    Then I load the DOM Information automation_practice.json
+    And I click in JS element <category>
+    Then Assert if Category Name contains text <expected value>
+
+    Examples:
+      | category                  | expected value  |
+      | T-shirts Category         | T-SHIRTS        |
+      | Blouses Category          | BLOUSES         |
+      | Casual Dresses Category   | CASUAL DRESSES  |
+      | Evening Dresses Category  | EVENING DRESSES |
+      | Summer Dresses Category   | SUMMER DRESSES  |
+
+

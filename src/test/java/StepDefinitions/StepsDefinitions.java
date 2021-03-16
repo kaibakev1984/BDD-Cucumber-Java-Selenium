@@ -35,6 +35,7 @@ public class StepsDefinitions {
     }
 
     Scenario scenario = null;
+
     public void scenario (Scenario scenario) { this.scenario = scenario; }
 
     @Given("^I am in App main site")
@@ -49,7 +50,7 @@ public class StepsDefinitions {
     }
 
     @Given("^I go to site (.*)")
-    public void iGoToSite(String URL) {
+    public void goToSite(String URL) {
         log.info("Navigate to: " + URL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(URL);
@@ -57,14 +58,14 @@ public class StepsDefinitions {
     }
 
     @Then("^I load the DOM Information (.*)$")
-    public void iLoadTheDOMInformationGaliciaJson(String json) throws Exception {
+    public void loadDOMInformationFromJSON(String json) throws Exception {
         SeleniumFunctions.FileName = json;
         SeleniumFunctions.readJson();
         log.info("initialize file: " + json);
     }
 
     @Then("^I do a click in element (.*)")
-    public void iDoAClickInElement(String element) throws Exception {
+    public void doAClickInElement(String element) throws Exception {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         functions.waitForClickableElement(element);
         driver.findElement(SeleniumElement).click();
@@ -72,13 +73,13 @@ public class StepsDefinitions {
     }
 
     @Then("^I set (.*) with text (.*)")
-    public void iSetWithText(String element, String text) throws Exception {
+    public void setElementWithText(String element, String text) throws Exception {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         driver.findElement(SeleniumElement).sendKeys(text);
     }
 
     @And("^I put (.*) in element (.*)")
-    public void iPutInElement(String text, String element) throws Exception {
+    public void putElementWithText(String text, String element) throws Exception {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         driver.findElement(SeleniumElement).sendKeys(text);
         driver.findElement(SeleniumElement).submit();
@@ -158,13 +159,13 @@ public class StepsDefinitions {
         functions.scrollToElement(element);
     }
 
-    @Then("^Assert if (.*) contains text (.*)")
+    @Then("Assert if (.*) is equal to (.*)")
     public void assertTextEquals(String element, String text) throws Exception {
         String actualText = functions.GetTextElement(element);
         Assert.assertEquals(text, actualText);
     }
 
-    @Then("Assert if (.*) is equal to (.*)")
+    @Then("^Assert if (.*) contains text (.*)")
     public void checkPartialTextElementPresent(String element, String text) throws Exception {
         functions.checkPartialTextElementPresent(element, text);
     }

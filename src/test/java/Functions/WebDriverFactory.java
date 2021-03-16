@@ -5,11 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-import java.io.IOException;
 import org.apache.log4j.Logger;
 
 public class WebDriverFactory {
-    static String resourceFolder = "src/test/java/Software";
+    static String resourceFolder = "src/test/java/Software/";
 
     private static Logger log = Logger.getLogger(String.valueOf(WebDriverFactory.class));
     private static WebDriverFactory instance = null;
@@ -44,10 +43,10 @@ public class WebDriverFactory {
         * */
         else if ("CHROME".equalsIgnoreCase(browser)) {
             if("WINDOWS".equalsIgnoreCase(os)){
-                System.setProperty("webdriver.chrome.driver", resourceFolder+"/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", resourceFolder+os+"/chromedriver.exe");
             }
             else{
-                System.setProperty("webdriver.chrome.driver", resourceFolder+"/chromedriver");
+                System.setProperty("webdriver.chrome.driver", resourceFolder+os+"/chromedriver");
             }
             driver = new ChromeDriver();
 

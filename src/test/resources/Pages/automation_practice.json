@@ -42,5 +42,29 @@
   "Alert Danger": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//*[@id=\"center_column\"]/div/ol/li"
+  },
+  "T-shirts Category": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[1]/a"
+  },
+  "Category Name": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/h1/span[1]"
+  },
+  "Blouses Category": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[2]/a"
+  },
+  "Casual Dresses Category": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[1]/a"
+  },
+  "Evening Dresses Category": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[2]/a"
+  },
+  "Summer Dresses Category": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a"
   }
 }
