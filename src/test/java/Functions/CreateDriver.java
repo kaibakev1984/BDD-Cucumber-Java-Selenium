@@ -26,7 +26,7 @@ public class CreateDriver {
         WebDriver driver;
 
         try {
-            log.info("***********************************************************************************************************");
+            log.info("*******************************************************************************************************");
             log.info("[ POM Configuration ] - Read the basic properties configuration from: " + properties);
             prop.load(in);
             browser = prop.getProperty("browser");
@@ -40,7 +40,7 @@ public class CreateDriver {
         /******** POM Information ********/
         log.info("[ POM Configuration ] - OS: " + os + " | Browser: " + browser + " |");
         log.info("[ POM Configuration ] - Logger Level: " + logLevel);
-        log.info("***********************************************************************************************************");
+        log.info("*******************************************************************************************************");
 
         /****** Load the driver *******/
         driver = WebDriverFactory.createNewWebDriver(browser, os);

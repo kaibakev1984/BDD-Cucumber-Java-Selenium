@@ -1,8 +1,4 @@
 Feature: Automation Practice
-
-  Background:
-    Given I set UserEmail value in Data Scenario
-
   @test
   Scenario: Search Dresses
     Given I go to site http://automationpractice.com/index.php
