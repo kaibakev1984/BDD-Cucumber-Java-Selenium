@@ -28,6 +28,7 @@ Feature: Examples
     And I do a click in element Female
     And I do a click in element No binary
     Then I close the window
+
   @Checkboxes
     Scenario: Handle Dropdown
       Given I am in App main site
@@ -45,6 +46,16 @@ Feature: Examples
     And I set Email with text kvasquez@fi.uba.ar
     Then I check if Email Error error message is false
     Then I close the window
+
+  @test
+  Scenario: I check if mail is registered
+    Given I go to site https://www.spotify.com/ar/signup/
+    Then I load the DOM Information spotify_registro.json
+    And I set Email with text mervindiazlugo@gmail.com
+    And I do a click in element Confirmation Email
+    Then Assert if Email Error contains text Este correo electrónico ya está conectado a una cuenta. Inicia sesión.
+    Then Assert if Email Error is equal to Este correo electrónico ya está conectado a una cuenta.
+    # Then I close the window
 
   ##  Tests from Chercher.tech
   # Para manipular frames

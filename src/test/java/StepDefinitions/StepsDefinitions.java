@@ -45,13 +45,15 @@ public class StepsDefinitions {
         // String url = prop.getProperty("MainAppUrlBase");
         log.info("Navigate to: " + url);
         driver.get(url);
+        functions.pageHasLoaded();
     }
 
     @Given("^I go to site (.*)")
     public void iGoToSite(String URL) {
         log.info("Navigate to: " + URL);
-        driver.get(URL);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(URL);
+        functions.pageHasLoaded();
     }
 
     @Then("^I load the DOM Information (.*)$")
@@ -95,7 +97,7 @@ public class StepsDefinitions {
     }
 
     @And("I set (.*) with key value (.*)")
-    public void iSetEmailWithKeyValueTituloText(String element, String key) throws Exception {
+    public void iSetEmailWithKeyValueTitleText(String element, String key) throws Exception {
         functions.iSetElementWithKeyValue(element, key);
     }
 
@@ -154,5 +156,16 @@ public class StepsDefinitions {
     @And("^I scroll to element (.*)")
     public void iScrollToElementSobreAmazon(String element) throws Exception {
         functions.scrollToElement(element);
+    }
+
+    @Then("^Assert if (.*) contains text (.*)")
+    public void assertIfEmailErrorContainsTextLoSentimosEsteCorreoYaEstáRegistrado(String element, String text) throws Exception {
+        String actualText = functions.GetTextElement(element);
+        Assert.assertEquals(text, actualText);
+    }
+
+    @Then("Assert if (.*) is equal to (.*)")
+    public void assertIfEmailErrorIsEqualToLoSentimosEsteCorreoYaEstáRegistrado(String element, String text) throws Exception {
+        functions.checkPartialTextElementPresent(element, text);
     }
 }

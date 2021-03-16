@@ -1,6 +1,5 @@
 package Functions;
 import StepDefinitions.Hooks;
-import cucumber.api.java.et.Ja;
 import junit.framework.Assert;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +8,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -32,10 +30,13 @@ public class SeleniumFunctions {
     public static String FileName = "";
     public static String PagesFilePath = "src/test/resources/Pages/";
 
-    /********* Scenary *********/
-    public static Map<String, String> ScenaryData = new HashMap<>();
+    /********* Scenario Test Data *********/
+    public static Map<String, String> scenarioData = new HashMap<>();
     public static String Environment = "";
+    public static String elementText = "";
+    public static boolean isDisplayed = Boolean.parseBoolean(null);
 
+    /********* DOM pages/json *********/
     public static String GetFieldBy = "";
     public static String ValueToFind = "";
 
@@ -59,8 +60,8 @@ public class SeleniumFunctions {
                 return null;
             }
         } catch (FileNotFoundException | NullPointerException e) {
-            log.error("ReadEntity: No existe el archivo " + FileName);
-            throw new IllegalStateException("ReadEntity: No existe el archivo " + FileName, e);
+            log.error("ReadEntity: File doesn't exist " + FileName);
+            throw new IllegalStateException("ReadEntity: File doesn't exist " + FileName, e);
         }
     }
 
@@ -105,11 +106,11 @@ public class SeleniumFunctions {
     }
 
     public void SaveInScenario(String key, String text) {
-        if (!this.ScenaryData.containsKey(key)) {
-            this.ScenaryData.put(key, text);
+        if (!this.scenarioData.containsKey(key)) {
+            this.scenarioData.put(key, text);
             log.info(String.format("Save as Scenario Context key: %s with value: %s", key, text));
         } else {
-            this.ScenaryData.replace(key, text);
+            this.scenarioData.replace(key, text);
             log.info(String.format("Update Scenario Context key: %s with value %s", key, text));
         }
     }
@@ -125,13 +126,13 @@ public class SeleniumFunctions {
 
     public void iSetElementWithKeyValue(String element, String key) throws Exception {
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
-        boolean exist = this.ScenaryData.containsKey(key);
+        boolean exist = this.scenarioData.containsKey(key);
         if (exist){
-            String text = this.ScenaryData.get(key);
+            String text = this.scenarioData.get(key);
             driver.findElement(SeleniumElement).sendKeys(text);
             log.info(String.format("Set on element %s with text %s", element, text));
         }else{
-            Assert.assertTrue(String.format("The given key %s do not exist in Context", key), this.ScenaryData.containsKey(key));
+            Assert.assertTrue(String.format("The given key %s do not exist in Context", key), this.scenarioData.containsKey(key));
         }
 
     }
@@ -241,5 +242,37 @@ public class SeleniumFunctions {
         jse.executeScript("arguments[0].scrollIntoView()", driver.findElement(SeleniumElement));
 
     }
+
+    public void pageHasLoaded() {
+        String GetActual = driver.getCurrentUrl();
+        log.info(String.format("Checking if %s page is loaded.", GetActual));
+        new WebDriverWait(driver, EXPLICIT_TIMEOUT).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete")
+        );
+    }
+
+    public String GetTextElement(String element) throws Exception {
+        By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
+        WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+        wait.until(ExpectedConditions.presenceOfElementLocated(SeleniumElement));
+        log.info(String.format("Waiting to the element: %s", element));
+        elementText = driver.findElement(SeleniumElement).getText();
+        return elementText;
+
+    }
+
+    public void checkPartialTextElementNotPresent(String element,String text) throws Exception {
+        elementText = GetTextElement(element);
+        boolean isFoundFalse = elementText.indexOf(text) !=-1? true: false;
+        Assert.assertFalse("Text is present in element: " + element + " current text is: " + elementText, isFoundFalse);
+
+    }
+
+    public void checkPartialTextElementPresent(String element,String text) throws Exception {
+        elementText = GetTextElement(element);
+        boolean isFound = elementText.indexOf(text) !=-1? true: false;
+        Assert.assertTrue("Text is not present in element: " + element + " current text is: " + elementText, isFound);
+    }
+
 
 }

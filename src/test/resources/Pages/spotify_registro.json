@@ -6,7 +6,7 @@
 
   "Confirmation Email":{
     "GetFieldBy": "id",
-    "ValueToFind": "confirmation"
+    "ValueToFind": "confirm"
   },
   "Titulo": {
     "GetFieldBy": "xpath",
@@ -19,7 +19,7 @@
 
   "Email Error": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[1]/div[2]/span/text()[1]"
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[1]/div[2]/span"
   },
   "Male": {
     "GetFieldBy": "xpath",
