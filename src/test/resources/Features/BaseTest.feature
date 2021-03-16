@@ -63,13 +63,20 @@ Feature: Examples
   ##  Tests using Amazon
   #   Para ejecutar scripts de JS
   @test
-    Scenario: Scroll to elements
+    Scenario: Click to element with JS functions
       Given I go to site https://www.amazon.es/
       Then I load the DOM Information amazon.json
       And I click in JS element Mi cuenta
       And I wait for element Mis Pedidos to be present
 
-  ##  Tests from Automation Practice  
+  @test
+  Scenario: Scroll to elements
+    Given I go to site https://www.amazon.es/
+    Then I load the DOM Information amazon.json
+    And I scroll to element Sobre Amazon
+    And I wait for element Sobre Amazon to be present
+
+  ##  Tests from Automation Practice
   @test
   Scenario: Search Dresses
     Given I go to site http://automationpractice.com/index.php

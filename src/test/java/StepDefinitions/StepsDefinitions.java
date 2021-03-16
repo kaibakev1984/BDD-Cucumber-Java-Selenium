@@ -145,9 +145,14 @@ public class StepsDefinitions {
     }
 
 
-    @And("I wait for element (.*) to be present")
+    @And("^I wait for element (.*) to be present")
     public void iWaitForElementMisPedidosToBePresent(String element) throws Exception {
         actualState = functions.isElementDisplayed(element);
         Assert.assertEquals("El estado es diferente al esperado", true, actualState);
+    }
+
+    @And("^I scroll to element (.*)")
+    public void iScrollToElementSobreAmazon(String element) throws Exception {
+        functions.scrollToElement(element);
     }
 }

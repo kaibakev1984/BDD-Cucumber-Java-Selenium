@@ -1,5 +1,6 @@
 package Functions;
 import StepDefinitions.Hooks;
+import cucumber.api.java.et.Ja;
 import junit.framework.Assert;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -220,6 +221,25 @@ public class SeleniumFunctions {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         log.info("Click to element with: " + element);
         jse.executeScript("arguments[0].click()", driver.findElement(SeleniumElement));
+    }
+
+    public void scrollPage(String to) throws Exception {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        if(to.equals("top")) {
+            log.info("Scrolling to the top of the page");
+            jse.executeScript("scroll(0,-250);");
+        } else if(to.equals("end")) {
+            log.info("Scrolling to the end of the page");
+            jse.executeScript("scroll(0, 250);");
+        }
+    }
+
+    public void scrollToElement(String element) throws Exception {
+        By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        log.info("Scrolling to element: " + element);
+        jse.executeScript("arguments[0].scrollIntoView()", driver.findElement(SeleniumElement));
+
     }
 
 }
