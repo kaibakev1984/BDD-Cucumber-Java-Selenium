@@ -86,5 +86,13 @@ Feature: Examples
     Then I load the DOM Information amazon.json
     And I scroll to element Sobre Amazon
     And I wait for element Sobre Amazon to be present
-    
+
+  @test
+  Scenario: Handle Alerts
+    Given I go to site https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+    Then I load the DOM Information frames.json
+    And I switch to Frame: Frame4 Alert
+    And I do a click in element Alert
+    And I wait 5 seconds
+    Then I accept alert
 

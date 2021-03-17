@@ -21,11 +21,11 @@
   },
   "Frame4 Alert": {
     "GetFieldBy": "id",
-    "ValueToFind": "iFrameeResult"
+    "ValueToFind": "iframeResult"
   },
   "Alert": {
     "GetFieldBy": "xpath",
-    "ValueToFind": ""
+    "ValueToFind": "/html[1]/body[1]/button[1]"
   }
 
 }

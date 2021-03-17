@@ -9,14 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.NoSuchElementException;
-import java.util.Properties;
 
 public class SeleniumFunctions {
 
@@ -288,5 +284,14 @@ public class SeleniumFunctions {
             log.error("Error came while waiting for the alert popup");
         }
     }
+
+    public void ScreenShot(String TestCaptura) throws IOException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmm");
+        String screenShotName = readProperties("ScreenShotPath") + "\\" + readProperties("browser") + "\\" + TestCaptura + "_(" + dateFormat.format(GregorianCalendar.getInstance().getTime()) + ")";
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        log.info("Screenshot saved as:" + screenShotName);
+        FileUtils.copyFile(scrFile, new File(String.format("%s.png", screenShotName)));
+    }
+
 
 }

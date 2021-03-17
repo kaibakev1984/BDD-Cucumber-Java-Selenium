@@ -180,4 +180,9 @@ public class StepsDefinitions {
         int secs = seconds * 1000;
         Thread.sleep(secs);
     }
+
+    @Then("^I (accept|dismiss) alert")
+    public void iAcceptAlert(String want) {
+        functions.acceptAlert(want);
+    }
 }
