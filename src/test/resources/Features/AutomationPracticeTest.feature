@@ -80,6 +80,7 @@ Feature: Automation Practice
     And I wait for element Total Price to be visible
     And I scroll to element Total Price
     Then Assert if Total Price is equal to $112.47
+    And I take screenshot: Add to cart
     And I wait 8 seconds
 
 
