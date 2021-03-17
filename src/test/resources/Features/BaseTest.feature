@@ -86,27 +86,5 @@ Feature: Examples
     Then I load the DOM Information amazon.json
     And I scroll to element Sobre Amazon
     And I wait for element Sobre Amazon to be present
-
-  ##  Tests from Automation Practice
-  @test
-  Scenario: Search Dresses
-    Given I go to site http://automationpractice.com/index.php
-    Then I load the DOM Information automation_practice.json
-    And I put Dresses in element Search Query
-
-  @test
-  Scenario: Search Dresses
-    Given I go to site http://automationpractice.com/index.php
-    Then I load the DOM Information automation_practice.json
-    And I put Shirt in element Search Query
-
-  @test
-  Scenario Outline: Search articles
-    Given I go to site http://automationpractice.com/index.php
-    Then I load the DOM Information automation_practice.json
-    And I put <article> in element Search Query
-    Examples:
-      | article |
-      | Dresses |
-      | Shirt   |
+    
 
