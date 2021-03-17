@@ -1,6 +1,7 @@
 package Functions;
 import StepDefinitions.Hooks;
 import junit.framework.Assert;
+import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.apache.log4j.Logger;
