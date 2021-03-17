@@ -96,9 +96,17 @@ Feature: Examples
     And I wait 5 seconds
     Then I accept alert
 
-    @ScreenShots
-    Scenario: take a screenshot
-      Given I am in App main site
-      And I wait site is loaded
-      And I take screenshot: HolyScreen
+  @ScreenShots
+  Scenario: take a screenshot
+    Given I am in App main site
+    And I wait site is loaded
+    And I take screenshot: HolyScreen
+
+  @ScreenShots
+  Scenario: take a screenshot
+    Given I am in App main site
+    And I wait site is loaded
+    And I take screenshot: HolyScreen
+    And I attach a Screenshot to Report: Para Allure
+
 

@@ -196,4 +196,9 @@ public class StepsDefinitions {
     public void iWaitSiteIsLoaded() {
         functions.pageHasLoaded();
     }
+
+    @And("I attach a Screenshot to Report: (.*)")
+    public void iAttachAScreenshotToReportParaAllure(String description) {
+        functions.attachScreenShot(description);
+    }
 }

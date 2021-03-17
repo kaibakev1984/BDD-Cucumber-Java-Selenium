@@ -78,7 +78,7 @@
                 <version>3.8.1</version>
             </plugin>
 
-            <plugin>
+       <!--     <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.version}</version>
@@ -87,7 +87,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>io.qameta.allure</groupId>

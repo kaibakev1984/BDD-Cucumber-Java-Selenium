@@ -295,11 +295,11 @@ public class SeleniumFunctions {
         FileUtils.copyFile(scrFile, new File(String.format("%s.png", screenShotName)));
     }
 
-    public byte[] attachScreenShot(){
+    public byte[] attachScreenShot(String description){
 
         log.info("Attaching Screenshot");
         byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        Allure.addAttachment(description, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         return screenshot;
 
     }
