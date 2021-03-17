@@ -52,6 +52,7 @@ Feature: Automation Practice
     Then I load the DOM Information automation_practice.json
     And I click in JS element <category>
     Then Assert if Category Name contains text <expected value>
+    And I take screenshot: Automation Practice
 
     Examples:
       | category                  | expected value  |
