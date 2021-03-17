@@ -154,6 +154,11 @@ public class StepsDefinitions {
         Assert.assertEquals("El estado es diferente al esperado", true, actualState);
     }
 
+    @And("^I wait for element (.*) to be visible")
+    public void waitForElementToBeVisible(String element) throws Exception {
+        functions.waitForElementVisible(element);
+    }
+
     @And("^I scroll to element (.*)")
     public void scrollToElement(String element) throws Exception {
         functions.scrollToElement(element);
@@ -169,4 +174,6 @@ public class StepsDefinitions {
     public void checkPartialTextElementPresent(String element, String text) throws Exception {
         functions.checkPartialTextElementPresent(element, text);
     }
+
+
 }

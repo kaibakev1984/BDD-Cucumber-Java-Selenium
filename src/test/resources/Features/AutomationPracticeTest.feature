@@ -61,4 +61,21 @@ Feature: Automation Practice
       | Evening Dresses Category  | EVENING DRESSES |
       | Summer Dresses Category   | SUMMER DRESSES  |
 
+  @test
+  Scenario: Add to cart
+    Given I go to site http://automationpractice.com/index.php
+    Then I load the DOM Information automation_practice.json
+    And I put Dresses in element Search Query
+    And I scroll to element Printed Summer Dress
+    And I click in JS element Printed Summer Dress
+    And I wait for element Continue shopping to be visible
+    And I do a click in element Continue shopping
+    And I click in JS element Printed Dress
+    And I wait for element Continue shopping to be visible
+    And I do a click in element Continue shopping
+    And I click in JS element Printed Summer Dress 2
+    And I wait for element Proceed to checkout to be visible
+    And I do a click in element Proceed to checkout
+    Then Assert if Total Price is equal to $112.47
+
 

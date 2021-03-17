@@ -66,5 +66,29 @@
   "Summer Dresses Category": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a"
+  },
+  "Printed Summer Dress": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[1]/span"
+  },
+  "Printed Dress": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span"
+  },
+  "Printed Summer Dress 2": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/div[2]/a[1]/span"
+  },
+  "Continue shopping": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span"
+  },
+  "Proceed to checkout": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a"
+  },
+  "Total Price": {
+    "GetFieldBy": "id",
+    "ValueToFind": "total_price"
   }
 }
