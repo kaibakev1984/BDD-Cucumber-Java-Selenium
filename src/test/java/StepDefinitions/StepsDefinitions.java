@@ -185,4 +185,15 @@ public class StepsDefinitions {
     public void iAcceptAlert(String want) {
         functions.acceptAlert(want);
     }
+
+
+    @And("I take screenshot: (.*)")
+    public void takeScreenshot(String name) throws IOException {
+        functions.ScreenShot(name);
+    }
+
+    @And("I wait site is loaded")
+    public void iWaitSiteIsLoaded() {
+        functions.pageHasLoaded();
+    }
 }
