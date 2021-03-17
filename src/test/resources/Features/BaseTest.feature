@@ -23,7 +23,7 @@ Feature: Examples
     Given I go to site https://www.spotify.com/ar/signup/
     Then I load the DOM Information spotify_registro.json
     And I do a click in element Email
-    And I set Email with text kvasquez@fi.uba.ar
+    And I set Email with text kmitnick@mitnicksecurity.com
     And I do a click in element Male
     And I do a click in element Female
     And I do a click in element No binary
@@ -43,7 +43,7 @@ Feature: Examples
   Scenario: I check state
     Given I go to site https://www.spotify.com/ar/signup/
     Then I load the DOM Information spotify_registro.json
-    And I set Email with text kvasquez@fi.uba.ar
+    And I set Email with text kmitnick@mitnicksecurity.com
     Then I check if Email Error error message is false
     Then I close the window
 

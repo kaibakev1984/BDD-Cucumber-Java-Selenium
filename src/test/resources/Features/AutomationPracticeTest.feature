@@ -13,7 +13,7 @@ Feature: Automation Practice
     Then I load the DOM Information automation_practice.json
     And I do a click in element Contact us
     And I set text Customer service in dropdown Subject Heading
-    And I set Email address with text kvasquez@fi.uba.ar
+    And I set Email address with text kmitnick@mitnicksecurity.com
     And I set Order reference with text 1234
     And I set Message with text Hello world!
     And I do a click in element Send
@@ -32,7 +32,7 @@ Feature: Automation Practice
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
     And I do a click in element Contact us
-    And I set Email address with text kvasquez@fi.uba.ar
+    And I set Email address with text kmitnick@mitnicksecurity.com
     And I do a click in element Send
     Then Assert if Alert Danger is equal to The message cannot be blank.
     
@@ -41,7 +41,7 @@ Feature: Automation Practice
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
     And I do a click in element Contact us
-    And I set Email address with text kvasquez@fi.uba.ar
+    And I set Email address with text kmitnick@mitnicksecurity.com
     And I set Message with text Hello world!
     And I do a click in element Send
     Then Assert if Alert Danger is equal to Please select a subject from the list provided.
