@@ -76,6 +76,9 @@ Feature: Automation Practice
     And I click in JS element Printed Summer Dress 2
     And I wait for element Proceed to checkout to be visible
     And I do a click in element Proceed to checkout
+    And I wait for element Total Price to be visible
+    And I scroll to element Total Price
     Then Assert if Total Price is equal to $112.47
+    And I wait 8 seconds
 
 

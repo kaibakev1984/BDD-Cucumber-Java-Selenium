@@ -273,6 +273,6 @@ public class SeleniumFunctions {
         boolean isFound = elementText.indexOf(text) !=-1? true: false;
         Assert.assertTrue("Text is not present in element: " + element + " current text is: " + elementText, isFound);
     }
-
+    
 
 }

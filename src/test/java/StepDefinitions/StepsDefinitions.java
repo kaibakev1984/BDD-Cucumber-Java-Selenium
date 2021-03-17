@@ -175,5 +175,9 @@ public class StepsDefinitions {
         functions.checkPartialTextElementPresent(element, text);
     }
 
-
+    @And("^I wait (.*) seconds")
+    public void waitForGivenSeconds(int seconds) throws InterruptedException {
+        int secs = seconds * 1000;
+        Thread.sleep(secs);
+    }
 }

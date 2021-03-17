@@ -18,5 +18,14 @@
   "Frame2 select":{
     "GetFieldBy": "id",
     "ValueToFind": "animals"
+  },
+  "Frame4 Alert": {
+    "GetFieldBy": "id",
+    "ValueToFind": "iFrameeResult"
+  },
+  "Alert": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": ""
   }
+
 }
