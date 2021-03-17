@@ -4,10 +4,7 @@ import junit.framework.Assert;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -273,6 +270,23 @@ public class SeleniumFunctions {
         boolean isFound = elementText.indexOf(text) !=-1? true: false;
         Assert.assertTrue("Text is not present in element: " + element + " current text is: " + elementText, isFound);
     }
-    
+
+    public void acceptAlert(String want) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_TIMEOUT);
+            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            String statusAlert = "";
+            if (want.equals("accept")) {
+                alert.accept();
+                statusAlert = "accepted";
+            } else {
+                alert.dismiss();
+                statusAlert = "dismissed";
+            }
+            log.info(String.format("The alert was %s successfully.", statusAlert));
+        } catch(Throwable e) {
+            log.error("Error came while waiting for the alert popup");
+        }
+    }
 
 }
