@@ -1,5 +1,6 @@
 package Functions;
 import StepDefinitions.Hooks;
+import io.qameta.allure.Allure;
 import junit.framework.Assert;
 import org.apache.commons.io.FileUtils;
 import org.json.simple.JSONObject;
@@ -294,5 +295,13 @@ public class SeleniumFunctions {
         FileUtils.copyFile(scrFile, new File(String.format("%s.png", screenShotName)));
     }
 
+    public byte[] attachScreenShot(){
+
+        log.info("Attaching Screenshot");
+        byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        return screenshot;
+
+    }
 
 }
