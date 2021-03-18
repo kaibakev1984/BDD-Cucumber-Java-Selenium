@@ -53,9 +53,9 @@ Feature: Examples
     Then I load the DOM Information spotify_registro.json
     And I set Email with text mervindiazlugo@gmail.com
     And I do a click in element Confirmation Email
-    Then Assert if Email Error contains text Este correo electrónico ya está conectado a una cuenta. Inicia sesión.
-    Then Assert if Email Error is equal to Este correo electrónico ya está conectado a una cuenta.
-    # Then I close the window
+    Then Assert if Email Error contains text Este correo electrónico ya está conectado a una cuenta.
+    Then Assert if Email Error is equal to Este correo electrónico ya está conectado a una cuenta. Inicia sesión.
+    Then I close the window
 
   ##  Tests from Chercher.tech
   # Para manipular frames

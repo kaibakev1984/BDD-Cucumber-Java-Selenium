@@ -165,9 +165,9 @@ public class StepsDefinitions {
     }
 
     @Then("Assert if (.*) is equal to (.*)")
-    public void assertTextEquals(String element, String text) throws Exception {
+    public void assertTextEquals(String element, String expectedText) throws Exception {
         String actualText = functions.GetTextElement(element);
-        Assert.assertEquals(text, actualText);
+        Assert.assertEquals(expectedText, actualText);
     }
 
     @Then("^Assert if (.*) contains text (.*)")
