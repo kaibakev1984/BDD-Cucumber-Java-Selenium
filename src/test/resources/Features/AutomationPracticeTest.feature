@@ -46,7 +46,7 @@ Feature: Automation Practice
     And I do a click in element Send
     Then Assert if Alert Danger is equal to Please select a subject from the list provided.
 
-  @test
+  @WomenBlock
   Scenario Outline: Click in Women block title
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -62,7 +62,7 @@ Feature: Automation Practice
       | Evening Dresses Category  | EVENING DRESSES |
       | Summer Dresses Category   | SUMMER DRESSES  |
 
-  @test
+  @AddToCart
   Scenario: Add to cart
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json

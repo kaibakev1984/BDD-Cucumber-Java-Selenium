@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "classpath:Features",
-        glue = "classpath:StepDefinitions"
-        //"classpath:Features"
-)
-
-public class TestRunner {
-}
+    features = "classpath:Features",
+    glue = "classpath:StepDefinitions",
+    tags = {"@WomenBlock"}
+    // "classpath:Features"
+    )
+public class TestRunner {}
