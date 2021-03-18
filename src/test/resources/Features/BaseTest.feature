@@ -96,13 +96,13 @@ Feature: Examples
     And I wait 5 seconds
     Then I accept alert
 
-  @ScreenShots
+  @Screenshot
   Scenario: take a screenshot
     Given I am in App main site
     And I wait site is loaded
     And I take screenshot: HolyScreen
 
-  @ScreenShots
+  @Screenshot
   Scenario: take a screenshot
     Given I am in App main site
     And I wait site is loaded

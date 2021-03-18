@@ -26,7 +26,7 @@ Feature: Automation Practice
     And I do a click in element Contact us
     And I do a click in element Send
     Then Assert if Alert Danger is equal to Invalid email address.
-    
+
   @test
   Scenario: Send Email with blank message
     Given I go to site http://automationpractice.com/index.php
@@ -35,7 +35,7 @@ Feature: Automation Practice
     And I set Email address with text kmitnick@mitnicksecurity.com
     And I do a click in element Send
     Then Assert if Alert Danger is equal to The message cannot be blank.
-    
+
   @test
   Scenario: Send Email without selected subject
     Given I go to site http://automationpractice.com/index.php
