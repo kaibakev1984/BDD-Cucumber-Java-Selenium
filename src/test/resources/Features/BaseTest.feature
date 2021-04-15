@@ -10,6 +10,7 @@ Feature: Examples
     Then I load the DOM Information spotify_registro.json
     And I save text of Titulo as Scenario Context
     And I set Email with key value Titulo.text
+    And I take screenshot: Titulo.text
 
   @test
     Scenario: Handle Dropdown

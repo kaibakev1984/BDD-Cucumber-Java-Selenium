@@ -10,7 +10,7 @@
   },
   "Titulo": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div[2]/h2"
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div/div[2]/h2"
   },
   "Mes de Nacimiento": {
     "GetFieldBy": "id",
@@ -23,14 +23,14 @@
   },
   "Male": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[1]/span[1]"
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div/form/fieldset/div/div[1]/label/span[1]"
   },
   "Female": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[2]/span[1]"
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div/form/fieldset/div/div[2]/label/span[1]"
   },
   "No binary": {
     "GetFieldBy": "xpath",
-    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[6]/div[2]/label[3]/span[1]"
+    "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/div/form/fieldset/div/div[3]/label/span[1]"
   }
 }

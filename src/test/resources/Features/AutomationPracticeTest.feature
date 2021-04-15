@@ -1,6 +1,9 @@
 Feature: Automation Practice
+  Background:
+    Given I set UserEmail value in Data Scenario
+
   @test
-  Scenario: Search Dresses
+  Scenario: Search Query
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
     And I put Dresses in element Search Query
