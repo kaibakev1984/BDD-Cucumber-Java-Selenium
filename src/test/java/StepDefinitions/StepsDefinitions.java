@@ -8,14 +8,19 @@ import cucumber.api.java.en.Then;
 import gherkin.ast.Scenario;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 
 public class StepsDefinitions {
@@ -200,5 +205,20 @@ public class StepsDefinitions {
     @And("I attach a Screenshot to Report: (.*)")
     public void iAttachAScreenshotToReportParaAllure(String description) {
         functions.attachScreenShot(description);
+    }
+
+    @Then("I resize browser to mobile")
+    public void iResizeBrowserToMobile() {
+        Map<String, String> mobileEmulation = new HashMap<>();
+
+        mobileEmulation.put("deviceName", "Nexus 5");
+
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver.get("http://automationpractice.com/index.php");
+        driver.manage().window().maximize();
     }
 }
