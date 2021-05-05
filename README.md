@@ -17,7 +17,7 @@ To run the test using console, you have to run the command `mvn test`.
 ~~~cpp
     AutomationTestingFramework
         |
-        + -- .gitignore
+        +-- .gitignore
         +-- README.md
         |
         \-- src
