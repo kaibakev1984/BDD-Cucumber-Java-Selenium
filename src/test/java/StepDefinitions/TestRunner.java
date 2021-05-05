@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
     features = "classpath:Features",
     glue = "classpath:StepDefinitions",
     //tags = {"@Failed"}
-   tags = {"@WomenBlock, @Screenshot"}
+   tags = {"@WomenBlock, @Screenshot"},
+   monochrome = true,
+   strict = true
     // "classpath:Features"
     )
 public class TestRunner {}

@@ -12,6 +12,57 @@ To run the test using console, you have to run the command `mvn test`.
 
 **Notice**: Actually, the project only runs in Google Chrome. If you want to try with Firefox or another browser, you have to add the corresponding driver and change default browser in file `test.properties`
 
+## Folder Structure
+
+~~~cpp
+    AutomationTestingFramework
+        |
+        + -- .gitignore
+        +-- README.md
+        |
+        \-- src
+            |
+            \-- test
+                |
+                +-- java
+                |   |
+                |   +-- Functions
+                |   |   |
+                |   |   +-- CreateDriver.java
+                |   |   +-- SeleniumFunctions.java
+                |   |   \-- WebDriverFactory.java
+                |   |
+                |   +-- Software
+                |   |   |
+                |   |   \-- windows
+                |   |       |
+                |   |       \-- chromedriver.exe
+                |   |
+                |   \-- StepDefinitions
+                |       |
+                |       +-- Hooks.java
+                |       +-- StepDefinitions.java
+                |       \-- TestRunner.java
+                |
+                |     
+                \-- resources
+                    |
+                    +-- allure.properties
+                    +-- log4j.properties
+                    +-- test.properties
+                    |
+                    +-- Features
+                    |   |
+                    |   +-- AutomationPracticeTest.feature
+                    |   +-- BaseTest.feature
+                    \-- Pages
+                        |
+                        +-- amazon.json
+                        +-- automation_practice.json
+                        +-- frames.json
+                        +-- spotify_registro.json 
+~~~
+
 ## Running with IDE: IntellijIDEA
 I recommend to install this plugins to run test cases in feature files with IntellijIDEA:
 - Cucumber for Java
