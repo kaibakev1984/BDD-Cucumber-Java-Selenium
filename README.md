@@ -10,8 +10,6 @@ mvn clean install
 
 To run the test using console, you have to run the command `mvn test`.
 
-**Notice**: Actually, the project only runs in Google Chrome. If you want to try with Firefox or another browser, you have to add the corresponding driver and change default browser in file `test.properties`
-
 ## Folder Structure
 
 ~~~cpp
@@ -31,12 +29,6 @@ To run the test using console, you have to run the command `mvn test`.
                 |   |   +-- CreateDriver.java
                 |   |   +-- SeleniumFunctions.java
                 |   |   \-- WebDriverFactory.java
-                |   |
-                |   +-- Software
-                |   |   |
-                |   |   \-- windows
-                |   |       |
-                |   |       \-- chromedriver.exe
                 |   |
                 |   \-- StepDefinitions
                 |       |
