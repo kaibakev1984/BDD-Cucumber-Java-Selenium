@@ -36,7 +36,6 @@ public class Hooks {
                 scenario.write("Current Page URL is " + driver.getCurrentUrl());
                 byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
                 scenario.embed(screenshot, "src/test/resources/Data/Screenshots/Failed");
-                //functions.ScreenShot(scenario.getName());
             } catch (WebDriverException somePlatformsDontSupportScreenshots) {
                 System.err.println(somePlatformsDontSupportScreenshots.getMessage());
             }

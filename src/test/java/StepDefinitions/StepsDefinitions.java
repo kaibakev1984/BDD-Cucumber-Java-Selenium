@@ -8,7 +8,6 @@ import cucumber.api.java.en.Then;
 import gherkin.ast.Scenario;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -26,7 +25,6 @@ import org.openqa.selenium.support.ui.Select;
 public class StepsDefinitions {
     private static Properties prop = new Properties();
     private static InputStream in = CreateDriver.class.getResourceAsStream("../test.properties");
-    private static String MainAppUrlBase;
 
     WebDriver driver;
     SeleniumFunctions functions = new SeleniumFunctions();
@@ -48,7 +46,6 @@ public class StepsDefinitions {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         String url = functions.readProperties("MainAppUrlBase");
         prop.load(in);
-        // String url = prop.getProperty("MainAppUrlBase");
         log.info("Navigate to: " + url);
         driver.get(url);
         functions.pageHasLoaded();

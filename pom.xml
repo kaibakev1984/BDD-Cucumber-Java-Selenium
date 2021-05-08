@@ -8,7 +8,6 @@
     <packaging>jar</packaging>
     <name>Selenium.Cucumber.BaseFramework</name>
 
-
     <properties>
         <selenium.version>3.11.0</selenium.version>
         <aspectj.version>1.8.10</aspectj.version>
@@ -16,9 +15,18 @@
         <junit.version>4.12</junit.version>
         <cucumber.version>4.3.1</cucumber.version>
         <maven.compiler.version>3.3</maven.compiler.version>
+        <webdrivermanager.version>4.4.1</webdrivermanager.version>
+        <log4j.version>1.2.17</log4j.version>
+        <cucumber-picocontainer.version>1.2.5</cucumber-picocontainer.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
@@ -64,7 +72,7 @@
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.sun.jmx</groupId>
@@ -93,21 +101,14 @@
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>1.2.5</version>
+            <version>${cucumber-picocontainer.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

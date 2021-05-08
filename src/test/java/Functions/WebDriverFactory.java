@@ -1,16 +1,16 @@
 package Functions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import org.apache.log4j.Logger;
 
 public class WebDriverFactory {
-    static String resourceFolder = "src/test/java/Software/";
-
-    private static Logger log = Logger.getLogger(String.valueOf(WebDriverFactory.class));
+    private final static Logger log = Logger.getLogger(String.valueOf(WebDriverFactory.class));
     private static WebDriverFactory instance = null;
 
     private WebDriverFactory() {}
@@ -23,44 +23,29 @@ public class WebDriverFactory {
     }
 
 
-    public static WebDriver createNewWebDriver(String browser, String os){
+    public static WebDriver createNewWebDriver(String browser){
         WebDriver driver;
 
-        /******** The driver selected is Local: Firefox  ********/
         if ("FIREFOX".equalsIgnoreCase(browser)) {
-            if("WINDOWS".equalsIgnoreCase(os)){
-                System.setProperty("webdriver.gecko.driver", resourceFolder+os+"/geckodriver.exe");
-            }
-            else{
-                System.setProperty("webdriver.gecko.driver", resourceFolder+os+"/geckodriver");
-            }
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
 
-        /******** The driver selected is Chrome  ********/
-        /*  Atención: Acá le sacamos la variable "os" que iba en el set properties. Originalmente iba así:
-        *   System.setProperty("webdriver.chrome.driver", resourceFolder + os + "/chromedriver.exe")
-        * */
         else if ("CHROME".equalsIgnoreCase(browser)) {
-            if("WINDOWS".equalsIgnoreCase(os)){
-                System.setProperty("webdriver.chrome.driver", resourceFolder+os+"/chromedriver.exe");
-            }
-            else{
-                System.setProperty("webdriver.chrome.driver", resourceFolder+os+"/chromedriver");
-            }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
 
         }
 
-        /******** The driver selected is Internet Explorer ********/
         else if ("INTERNET EXPLORER".equalsIgnoreCase(browser)) {
-            System.setProperty("webdriver.ie.driver", resourceFolder+"/IEDriverServer.exe");
+            WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
 
-        }
-        /******** The driver is not selected  ********/
-        else {
-            log.error("The Driver is not selected properly, invalid name: " + browser + ", " + os);
+        } else if("MICROSOFT EDGE".equalsIgnoreCase(browser)) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        } else {
+            log.error("The Driver is not selected properly, invalid name: " + browser);
             return null;
         }
         driver.manage().window().maximize();

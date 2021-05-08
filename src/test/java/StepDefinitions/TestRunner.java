@@ -8,10 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
     features = "classpath:Features",
     glue = "classpath:StepDefinitions",
-    //tags = {"@Failed"}
-   tags = {"@WomenBlock, @Screenshot"},
-   monochrome = true,
-   strict = true
-    // "classpath:Features"
+    tags = {"@WomenBlock, @Screenshot"},
+    monochrome = true,
+    strict = true
     )
 public class TestRunner {}

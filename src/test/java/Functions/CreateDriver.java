@@ -13,15 +13,12 @@ public class CreateDriver {
 
     private static String properties = "test.properties";
     private static String browser;
-    private static String os;
     private static String logLevel;
 
     private static Logger log = Logger.getLogger(String.valueOf(CreateDriver.class));
 
     private CreateDriver() { CreateDriver.initConfig(); }
-    /**
-     * Get the Browser from the POM
-     */
+
     public static WebDriver initConfig(){
         WebDriver driver;
 
@@ -30,20 +27,17 @@ public class CreateDriver {
             log.info("[ POM Configuration ] - Read the basic properties configuration from: " + properties);
             prop.load(in);
             browser = prop.getProperty("browser");
-            os = prop.getProperty("os");
             logLevel = prop.getProperty("logLevel");
 
         } catch (IOException e) {
             log.error("initConfig Error", e);
         }
 
-        /******** POM Information ********/
-        log.info("[ POM Configuration ] - OS: " + os + " | Browser: " + browser + " |");
+        log.info("[ POM Configuration ] - " + " Browser: " + browser + " |");
         log.info("[ POM Configuration ] - Logger Level: " + logLevel);
         log.info("*******************************************************************************************************");
 
-        /****** Load the driver *******/
-        driver = WebDriverFactory.createNewWebDriver(browser, os);
+        driver = WebDriverFactory.createNewWebDriver(browser);
 
         return driver;
     }
