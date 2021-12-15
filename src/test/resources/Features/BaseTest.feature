@@ -13,7 +13,7 @@ Feature: Examples
     And I take screenshot: Titulo.text
 
   @test
-    Scenario: Handle Dropdown
+  Scenario: Handle Dropdown
     Given I am in App main site
     Then I load the DOM Information spotify_registro.json
     And I set text Febrero in dropdown Mes de Nacimiento
@@ -31,13 +31,13 @@ Feature: Examples
     Then I close the window
 
   @Checkboxes
-    Scenario: Handle Dropdown
-      Given I am in App main site
-      Then I load the DOM Information spotify_registro.json
-      And I check the checkbox having Male
-      And I check the checkbox having Female
-      And I check the checkbox having No binary
-      Then I close the window
+  Scenario: Handle Dropdown
+    Given I am in App main site
+    Then I load the DOM Information spotify_registro.json
+    And I check the checkbox having Male
+    And I check the checkbox having Female
+    And I check the checkbox having No binary
+    Then I close the window
 
   # Para chequear el estado del elemento
   @test
@@ -75,11 +75,11 @@ Feature: Examples
   ##  Tests using Amazon
   #   Para ejecutar scripts de JS
   @test
-    Scenario: Click to element with JS functions
-      Given I go to site https://www.amazon.es/
-      Then I load the DOM Information amazon.json
-      And I click in JS element Mi cuenta
-      And I wait for element Mis Pedidos to be present
+  Scenario: Click to element with JS functions
+    Given I go to site https://www.amazon.es/
+    Then I load the DOM Information amazon.json
+    And I click in JS element Mi cuenta
+    And I wait for element Mis Pedidos to be present
 
   @test
   Scenario: Scroll to elements

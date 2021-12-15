@@ -1,10 +1,9 @@
 {
-  "Email":{
+  "Email": {
     "GetFieldBy": "id",
     "ValueToFind": "email"
   },
-
-  "Confirmation Email":{
+  "Confirmation Email": {
     "GetFieldBy": "id",
     "ValueToFind": "confirm"
   },
@@ -16,7 +15,6 @@
     "GetFieldBy": "id",
     "ValueToFind": "month"
   },
-
   "Email Error": {
     "GetFieldBy": "xpath",
     "ValueToFind": "//*[@id=\"__next\"]/main/div[2]/form/div[1]/div[2]/span"

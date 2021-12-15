@@ -1,7 +1,7 @@
 {
   "Sobre Amazon": {
     "GetFieldBy": "link",
-    "ValueToFind":"Sobre Amazon.es"
+    "ValueToFind": "Sobre Amazon.es"
   },
   "Mi cuenta": {
     "GetFieldBy": "xpath",

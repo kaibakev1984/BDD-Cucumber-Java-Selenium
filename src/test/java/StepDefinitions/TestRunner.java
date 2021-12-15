@@ -10,6 +10,5 @@ import org.junit.runner.RunWith;
     glue = "classpath:StepDefinitions",
     tags = {"@AddToCart"},
     monochrome = true,
-    strict = true
-    )
+    strict = true)
 public class TestRunner {}

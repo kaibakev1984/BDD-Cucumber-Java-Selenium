@@ -1,4 +1,5 @@
 Feature: Automation Practice
+
   Background:
     Given I set UserEmail value in Data Scenario
 
@@ -58,12 +59,12 @@ Feature: Automation Practice
     And I take screenshot: Automation Practice
 
     Examples:
-      | category                  | expected value  |
-      | T-shirts Category         | T-SHIRTS        |
-      | Blouses Category          | BLOUSES         |
-      | Casual Dresses Category   | CASUAL DRESSES  |
-      | Evening Dresses Category  | EVENING DRESSES |
-      | Summer Dresses Category   | SUMMER DRESSES  |
+      | category                 | expected value  |
+      | T-shirts Category        | T-SHIRTS        |
+      | Blouses Category         | BLOUSES         |
+      | Casual Dresses Category  | CASUAL DRESSES  |
+      | Evening Dresses Category | EVENING DRESSES |
+      | Summer Dresses Category  | SUMMER DRESSES  |
 
   @AddToCart
   Scenario: Add to cart
