@@ -136,6 +136,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <allureDownloadUrl>https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.zip</allureDownloadUrl>
                     <propertiesFilePath>src/test/resources/allure.properties/allure.properties</propertiesFilePath>
                     <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
                     <reportVersion>2.7.0</reportVersion>
