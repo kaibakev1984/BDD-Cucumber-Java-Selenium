@@ -81,5 +81,24 @@ If you need more and specific steps for your tests, you can edit the file **Step
 ##  Notice
 Actually, I'm working in this framework, adding features and solving some bugs. 
 
+## Running tests
+Open command prompt and execute
+
+~~~bash
+mvn clean test
+~~~
+
+## Open report
+Open command promt and execute to create **`allure`**
+
+~~~bash
+mvn allure:report
+~~~
+
+Then, run command to open report
+
+~~~bash
+mvn allure:serve
+~~~
 
 
