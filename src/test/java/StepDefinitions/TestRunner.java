@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
     features = "classpath:Features",
     glue = "classpath:StepDefinitions",
-    tags = {"@AddToCart"},
+    tags = {"@AutomationPractice"},
     monochrome = true,
     strict = true)
 public class TestRunner {}

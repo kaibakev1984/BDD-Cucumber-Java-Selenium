@@ -1,9 +1,9 @@
+@AutomationPractice
 Feature: Automation Practice
 
   Background:
     Given I set UserEmail value in Data Scenario
 
-  @test
   Scenario: Search Query
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -11,7 +11,6 @@ Feature: Automation Practice
     Then Assert if Search Lighter is equal to "DRESSES"
     Then Assert if Search Heading Counter contains text 7 results have been found.
 
-  @test
   Scenario: Send a mail
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -23,7 +22,6 @@ Feature: Automation Practice
     And I do a click in element Send
     Then Assert if Alert Success is equal to Your message has been successfully sent to our team.
 
-  @test
   Scenario: Send Email with Invalid email address
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -31,7 +29,6 @@ Feature: Automation Practice
     And I do a click in element Send
     Then Assert if Alert Danger is equal to Invalid email address.
 
-  @test
   Scenario: Send Email with blank message
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -40,7 +37,6 @@ Feature: Automation Practice
     And I do a click in element Send
     Then Assert if Alert Danger is equal to The message cannot be blank.
 
-  @test
   Scenario: Send Email without selected subject
     Given I go to site http://automationpractice.com/index.php
     Then I load the DOM Information automation_practice.json
@@ -86,5 +82,3 @@ Feature: Automation Practice
     Then Assert if Total Price is equal to $112.47
     And I attach a Screenshot to Report: Add to cart
     And I wait 8 seconds
-
-
